@@ -5,7 +5,6 @@
     --cf-highlight: #fae100;
 }
 
-
 html,
 body {
     height: 100%;
@@ -14,15 +13,160 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    background-image: url("/img/LandingPage_1920.png");
+    background-image: url("/img/LandingPage_576.png");
     background-position: top right;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--cf-darkblue);
+    font-family: 'Roboto', sans-serif;
+    color: var(--cf-light);
 }
+
+.bg-dark {
+    /* override bootstrap's opacity */
+    --bs-bg-opacity: 0;
+}
+
+.navbar-dark .navbar-brand {
+    --bs-navbar-color: var(--cf-highlight);
+    --bs-navbar-hover-color: var(--cf-highlight);
+    --bs-navbar-disabled-color: var(--cf-highlight);
+    --bs-navbar-active-color: var(--cf-highlight);
+    --bs-navbar-brand-color: var(--cf-highlight);
+    --bs-navbar-brand-hover-color: var(--cf-highlight);
+    --bs-navbar-toggler-border-color: var(--cf-highlight);
+    --bs-navbar-toggler-icon-bg: #{escape-svg($navbar-dark-toggler-icon-bg)};
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--cf-light);
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--cf-light);
+}
+
+.navbar-dark .navbar-nav .nav-link.active{
+    color: var(--cf-light);
+}
+
 
 .content {
     flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 1.5rem;
+}
+
+.main-title {
+    font-family: 'Racing Sans One', sans-serif;
+    font-size: 2.5rem;
+    line-height: 2rem;
+}
+
+
+.subtitle {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    line-height: 1.1rem;
+    letter-spacing: .09rem;
 }
 
 .footer {
     flex-shrink: 0;
+}
+
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    body {
+        background-image: url(/img/LandingPage_768.png);
+        background-position: 69% 50%;
+    }
+    
+    .content {
+        justify-content: center;
+    }
+
+    .main-title {
+        font-size: 2.4rem;
+        line-height: 2rem;
+    }
+
+
+    .subtitle {
+        font-weight: 300;
+        margin-bottom: 1rem;
+        font-size: .85rem;
+        line-height: 1.1rem;
+        letter-spacing: .09rem;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    body {
+        background-image: url("/img/LandingPage_992.png");
+    }
+    .content {
+        justify-content: center;
+    }
+    .main-title {
+        font-size: 3.2rem;
+        line-height: 2.4rem;
+    }
+
+
+    .subtitle {
+        font-weight: 400;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+        letter-spacing: .12rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    body {
+        background-image: url("/img/LandingPage_1200.png");
+    }
+    
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    body {
+        background-image: url("/img/LandingPage_1400.png");
+    }
+    .content {
+        justify-content: center;
+    }
+    .main-title {
+        font-size: 4.5rem;
+        line-height: 3.5rem;
+    }
+    .subtitle {
+        font-weight: 400;
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        letter-spacing: .14rem;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    body {
+        background-image: url("/img/LandingPage_1920.png");
+    }
+
 }
